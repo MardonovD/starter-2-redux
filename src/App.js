@@ -1,8 +1,8 @@
 import { useState } from "react";
-
+import "./style/styles.css";
 function App() {
   const [data, setData] = useState(0);
-  console.log(data);
+
   function inc() {
     setData((prev) => prev + 1);
   }
@@ -11,7 +11,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="app w-50 mx-auto">
       <h3>Counet: {data}</h3>
       <button onClick={inc} className="btn btn-success">
         INCR
