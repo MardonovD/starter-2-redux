@@ -8,11 +8,21 @@ function App() {
         <thead>
           <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Surname</th>
+            <th>Programming Language.</th>
+            <th>Stack</th>
             <th>Action</th>
           </tr>
         </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>JavaScript</td>
+            <td>Mern Stack</td>
+            <td>
+              <button className="btn btn-outline-danger">delete</button>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   );
