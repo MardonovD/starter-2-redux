@@ -1,27 +1,17 @@
 import { useState } from "react";
+import TableHeader from "./components/TableHeader";
+import TableItem from "./components/TableItem";
 
 import "./style/styles.css";
 function App() {
   return (
     <div className="app w-50 mx-auto">
       <table className="table table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Programming Language.</th>
-            <th>Stack</th>
-            <th>Action</th>
-          </tr>
-        </thead>
+        <TableHeader />
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>JavaScript</td>
-            <td>Mern Stack</td>
-            <td>
-              <button className="btn btn-outline-danger">delete</button>
-            </td>
-          </tr>
+          <TableItem />
+          <TableItem />
+          <TableItem />
         </tbody>
       </table>
     </div>
