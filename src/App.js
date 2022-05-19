@@ -31,17 +31,13 @@ const App = () => {
     },
   ]);
 
-  const [title, setTitle] = useState("");
-  const [stack, setStack] = useState("");
+  const [post, setPost] = useState({ title: "", stack: "" });
 
   const addPost = (e) => {
     e.preventDefault();
-    const newPost = {
-      id: Date.now(),
-      title,
-      stack,
-    };
-    setPosts([...posts, newPost]);
+
+    setPosts([...posts, { ...post, id: Date.now() }]);
+    setPost({ title: "", stack: "" });
   };
 
   return (
@@ -52,15 +48,15 @@ const App = () => {
           type="text"
           className="form-control"
           placeholder="Programming Language..."
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          value={post.title}
+          onChange={(e) => setPost({ ...post, title: e.target.value })}
         />
         <MyInput
           type="text"
           className="form-control my-3"
           placeholder="Enter your favourite stack"
-          value={stack}
-          onChange={(e) => setStack(e.target.value)}
+          value={post.stack}
+          onChange={(e) => setPost({ ...post, stack: e.target.value })}
         />
 
         <MyButton onClick={addPost}>Add Post</MyButton>
