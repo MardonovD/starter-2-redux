@@ -31,6 +31,13 @@ const App = () => {
     },
   ]);
 
+  const [title, setTitle] = useState("");
+
+  const addPost = (e) => {
+    e.preventDefault();
+    console.log(title);
+  };
+
   return (
     <div className="app w-50 mx-auto ">
       <form>
@@ -39,6 +46,8 @@ const App = () => {
           type="text"
           className="form-control"
           placeholder="Programming Language..."
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
         <MyInput
           type="text"
@@ -46,7 +55,7 @@ const App = () => {
           placeholder="Enter your favourite stack"
         />
 
-        <MyButton>Add Post</MyButton>
+        <MyButton onClick={addPost}>Add Post</MyButton>
       </form>
       <TableList posts={posts} title={"Favourite Programming Language.."} />
     </div>
