@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import TableHeader from "./components/TableHeader";
 import TableItem from "./components/TableItem";
 import TableList from "./components/TableList";
@@ -32,6 +32,7 @@ const App = () => {
   ]);
 
   const [title, setTitle] = useState("");
+  const inputRef = useRef();
 
   const addPost = (e) => {
     e.preventDefault();
@@ -53,6 +54,7 @@ const App = () => {
           type="text"
           className="form-control my-3"
           placeholder="Enter your favourite stack"
+          ref={inputRef}
         />
 
         <MyButton onClick={addPost}>Add Post</MyButton>
