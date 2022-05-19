@@ -1,20 +1,21 @@
 import React from "react";
 import { useState } from "react";
-import Counter from "./components/Counter";
-import InputValue from "./components/InputValue";
-import ToggleBtn from "./components/ToggleBtn";
+
 import "./style/styles.css";
 const App = () => {
   return (
-    <>
-      <div className="app w-50 mx-auto">
-        <Counter />
-
-        <hr />
-        <InputValue />
-        <ToggleBtn />
-      </div>
-    </>
+    <div className="app w-50 mx-auto ">
+      <table className=" table table-striped ">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
   );
 };
 
