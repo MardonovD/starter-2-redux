@@ -3,6 +3,7 @@ import { useState } from "react";
 import TableHeader from "./components/TableHeader";
 import TableItem from "./components/TableItem";
 import TableList from "./components/TableList";
+import MyButton from "./components/UI/BUTTON/MyButton";
 
 import "./style/styles.css";
 const App = () => {
@@ -32,7 +33,7 @@ const App = () => {
   return (
     <div className="app w-50 mx-auto ">
       <form>
-        <h4 className="text-center">Create your first post</h4>
+        <h5 className="text-center">Create your first post</h5>
         <input
           type="text"
           className="form-control"
@@ -43,6 +44,7 @@ const App = () => {
           className="form-control my-3"
           placeholder="Enter your favourite stack"
         />
+        <MyButton>Add Post</MyButton>
       </form>
       <TableList posts={posts} title={"Favourite Programming Language.."} />
     </div>
