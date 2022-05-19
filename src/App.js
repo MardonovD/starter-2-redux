@@ -4,6 +4,7 @@ import TableHeader from "./components/TableHeader";
 import TableItem from "./components/TableItem";
 import TableList from "./components/TableList";
 import MyButton from "./components/UI/BUTTON/MyButton";
+import MyInput from "./components/UI/input/MyInput";
 
 import "./style/styles.css";
 const App = () => {
@@ -34,16 +35,17 @@ const App = () => {
     <div className="app w-50 mx-auto ">
       <form>
         <h5 className="text-center">Create your first post</h5>
-        <input
+        <MyInput
           type="text"
           className="form-control"
           placeholder="Programming Language..."
         />
-        <input
+        <MyInput
           type="text"
           className="form-control my-3"
           placeholder="Enter your favourite stack"
         />
+
         <MyButton>Add Post</MyButton>
       </form>
       <TableList posts={posts} title={"Favourite Programming Language.."} />
