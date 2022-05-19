@@ -1,21 +1,18 @@
-import { useState } from "react";
-import TableHeader from "./components/TableHeader";
-import TableItem from "./components/TableItem";
+import React from "react";
 
-import "./style/styles.css";
-function App() {
+const App = () => {
+  let count = 0;
   return (
-    <div className="app w-50 mx-auto">
-      <table className="table table-striped">
-        <TableHeader />
-        <tbody>
-          <TableItem />
-          <TableItem />
-          <TableItem />
-        </tbody>
-      </table>
-    </div>
+    <>
+      <h3>Count:{count}</h3>
+      <button onClick={() => (count += 1)} className="btn btn-success">
+        INCR
+      </button>
+      <button onClick={() => (count -= 1)} className="btn btn-danger">
+        DECR
+      </button>
+    </>
   );
-}
+};
 
 export default App;
