@@ -1,14 +1,13 @@
 import React from "react";
-
+import { useState } from "react";
 const App = () => {
-  let count = 0;
+  const [count, setCount] = useState(0);
+
   function inc() {
-    count += 1;
-    console.log(count);
+    setCount((prev) => prev + 1);
   }
   function dec() {
-    count -= 1;
-    console.log(count);
+    setCount((prev) => prev - 1);
   }
   return (
     <>
