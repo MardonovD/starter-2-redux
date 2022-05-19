@@ -1,27 +1,16 @@
 import React from "react";
 
-const TableItem = () => {
+const TableItem = (props) => {
+  console.log(props);
   return (
-    <>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Programming Language</th>
-          <th>Stack</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1 </td>
-          <td>JavaScript</td>
-          <td>Mern Stack</td>
-          <td>
-            <button className="btn btn-outline-danger">delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </>
+    <tr>
+      <td>{props.post.id}</td>
+      <td>{props.post.title}</td>
+      <td>{props.post.stack}</td>
+      <td>
+        <button className="btn btn-outline-danger">delete</button>
+      </td>
+    </tr>
   );
 };
 
