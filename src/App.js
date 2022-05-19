@@ -38,11 +38,17 @@ const App = () => {
   return (
     <div className="app w-50 mx-auto ">
       <PostForm createPost={createPost} />
-      <TableList
-        remove={removePost}
-        posts={posts}
-        title={"Favourite Programming Language.."}
-      />
+      {posts.length ? (
+        <TableList
+          remove={removePost}
+          posts={posts}
+          title={"Favourite Programming Language.."}
+        />
+      ) : (
+        <h6 className="my-3 text-center " style={{ color: "red" }}>
+          You should add some Post
+        </h6>
+      )}
     </div>
   );
 };
