@@ -1,25 +1,30 @@
 import React from "react";
 import { useState } from "react";
+import BtnIncrDecr from "./components/BtnIncrDecr";
 import "./style/styles.css";
 const App = () => {
-  const [count, setCount] = useState(0);
+  const [toggleBtn, setToogleBtn] = useState(false);
+  const [value, setValue] = useState("dos");
 
-  function inc() {
-    setCount((prev) => prev + 1);
-  }
-  function dec() {
-    setCount((prev) => prev - 1);
-  }
   return (
     <>
       <div className="app w-50 mx-auto">
-        <h3>Count:{count}</h3>
-        <button onClick={inc} className="btn btn-success">
-          INCR
+        <BtnIncrDecr /> 
+        <hr />
+        <p>Value:{value}</p>
+        <input
+          type="text"
+          className="form-control"
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        />
+        <button
+          onClick={() => setToogleBtn(!toggleBtn)}
+          className="btn btn-secondary"
+        >
+          Toogle Btn
         </button>
-        <button onClick={dec} className="btn btn-danger">
-          DECR
-        </button>
+        {toggleBtn ? <p className="lead">Youtube Content</p> : null}
       </div>
     </>
   );
