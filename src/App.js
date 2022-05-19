@@ -32,11 +32,16 @@ const App = () => {
   ]);
 
   const [title, setTitle] = useState("");
-  const inputRef = useRef();
+  const [stack, setStack] = useState("");
 
   const addPost = (e) => {
     e.preventDefault();
-    console.log(title);
+    const newPost = {
+      id: Date.now(),
+      title,
+      stack,
+    };
+    setPosts([...posts, newPost]);
   };
 
   return (
@@ -54,7 +59,8 @@ const App = () => {
           type="text"
           className="form-control my-3"
           placeholder="Enter your favourite stack"
-          ref={inputRef}
+          value={stack}
+          onChange={(e) => setStack(e.target.value)}
         />
 
         <MyButton onClick={addPost}>Add Post</MyButton>
