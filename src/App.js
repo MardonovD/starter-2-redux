@@ -31,10 +31,18 @@ const App = () => {
     setPosts([...posts, newPost]);
   };
 
+  const removePost = (post) => {
+    setPosts(posts.filter((s) => s.id !== post.id));
+  };
+
   return (
     <div className="app w-50 mx-auto ">
       <PostForm createPost={createPost} />
-      <TableList posts={posts} title={"Favourite Programming Language.."} />
+      <TableList
+        remove={removePost}
+        posts={posts}
+        title={"Favourite Programming Language.."}
+      />
     </div>
   );
 };

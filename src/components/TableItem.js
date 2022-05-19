@@ -8,7 +8,12 @@ const TableItem = (props) => {
       <td>{props.post.title}</td>
       <td>{props.post.stack}</td>
       <td>
-        <MyButton className="btn btn-outline-danger">delete</MyButton>
+        <MyButton
+          onClick={() => props.remove(props.post)}
+          className="btn btn-outline-danger"
+        >
+          delete
+        </MyButton>
       </td>
     </tr>
   );

@@ -29,7 +29,7 @@ const PostForm = ({ createPost }) => {
         className="form-control my-3"
         placeholder="Enter your favourite stack"
         value={post.stack}
-        onChange={(e) => setPost({ ...post, stack: e.target.stack })}
+        onChange={(e) => setPost({ ...post, stack: e.target.value })}
       />
 
       <MyButton onClick={addPost}>Add Post</MyButton>
