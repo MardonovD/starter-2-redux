@@ -1,7 +1,6 @@
 import React from "react";
 
 const TableItem = (props) => {
-  console.log(props);
   return (
     <tr>
       <td>{props.post.id}</td>

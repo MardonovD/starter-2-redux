@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import TableHeader from "./components/TableHeader";
 import TableItem from "./components/TableItem";
+import TableList from "./components/TableList";
 
 import "./style/styles.css";
 const App = () => {
@@ -29,14 +30,7 @@ const App = () => {
   ]);
   return (
     <div className="app w-50 mx-auto ">
-      <table className=" table table-striped ">
-        <TableHeader />
-        <tbody>
-          {posts.map((post) => (
-            <TableItem post={post} />
-          ))}
-        </tbody>
-      </table>
+      <TableList posts={posts} />
     </div>
   );
 };
