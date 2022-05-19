@@ -28,9 +28,23 @@ const App = () => {
       stack: "backend",
     },
   ]);
+
   return (
     <div className="app w-50 mx-auto ">
-      <TableList posts={posts} />
+      <form>
+        <h4 className="text-center">Create your first post</h4>
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Programming Language..."
+        />
+        <input
+          type="text"
+          className="form-control my-3"
+          placeholder="Enter your favourite stack"
+        />
+      </form>
+      <TableList posts={posts} title={"Favourite Programming Language.."} />
     </div>
   );
 };
