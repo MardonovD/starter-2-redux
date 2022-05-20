@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useRef } from "react";
 import PostForm from "./components/PostForm";
 import TableList from "./components/TableList";
+import MySelect from "./components/UI/select/MySelect";
 import "./style/styles.css";
 const App = () => {
   const [posts, setPosts] = useState([
@@ -26,7 +27,11 @@ const App = () => {
       stack: "backend",
     },
   ]);
-
+  const [select, setSelect] = useState("");
+  const setPost = (sort) => {
+    setSelect(sort);
+    console.log(sort);
+  };
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
   };
@@ -38,6 +43,17 @@ const App = () => {
   return (
     <div className="app w-50 mx-auto ">
       <PostForm createPost={createPost} />
+      <div className="d-flex flex-row-reverse my-2">
+        <MySelect
+          value={select}
+          onChange={setPost}
+          defaultValue="Sorted By"
+          options={[
+            { value: "Programming", name: "Programming" },
+            { value: "Jobs ", name: "Jobs" },
+          ]}
+        />
+      </div>
       {posts.length ? (
         <TableList
           remove={removePost}
